@@ -1,5 +1,5 @@
-using SR05-2021-POP2022.exceptions;
-using SR05-2021-POP2022.models;
+//using SkolaJezika.exceptions;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class ClassManager
     {
@@ -31,7 +31,7 @@ namespace SR05-2021-POP2022.managers
             Class foundClass = allClasses.ToList().Find(x => x.Id == id);
             if (foundClass == null)
             {
-                throw new ClassNotFoundException("Cas nije pronadjen.");
+                //throw new ClassNotFoundException("Cas nije pronadjen.");
             }
             return foundClass;
         }

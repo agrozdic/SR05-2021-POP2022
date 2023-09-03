@@ -1,4 +1,4 @@
-using SR38_2021_POP2022.models;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,25 +6,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR05=2021=POP20222.models
+namespace SkolaJezika.models
 {
     public abstract class User : INotifyPropertyChanged
     {
 
 
-        private string firstName;
-        private string lastName;
-        private string jmbg;
-        private string email;
-        private string password;
-        private EUserType userType;
-        private EGender gender;
-        private Address address;
-        private bool active;
+        protected string firstName;
+        protected string lastName;
+        protected string jmbg;
+        protected string email;
+        protected string password;
+        protected EUserType userType;
+        protected EGender gender;
+        protected Address address;
+        protected bool active;
 
-        private User() { }
+        public User() { }
 
-        private User(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, bool active, Address address)
+        protected User(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, bool active, Address address)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -47,7 +47,7 @@ namespace SR05=2021=POP20222.models
             get { return lastName; }
             set { lastName = value; OnPropertyChanged("lastName"); }
         }
-        public string jmbg
+        public string Jmbg
         {
             get { return jmbg; }
             set { jmbg = value; OnPropertyChanged("jmbg"); }
@@ -86,7 +86,7 @@ namespace SR05=2021=POP20222.models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(String name)
+        protected void OnPropertyChanged(String name)
         {
             if (PropertyChanged != null)
             {

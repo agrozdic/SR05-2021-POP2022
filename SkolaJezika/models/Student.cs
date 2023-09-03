@@ -1,4 +1,4 @@
-using SR05-2021-POP2022.models;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR05-2021-POP2022.models
+namespace SkolaJezika.models
 {
     public class Student : User, INotifyPropertyChanged
     {
@@ -22,7 +22,7 @@ namespace SR05-2021-POP2022.models
             this.reservedClasses = reservedClasses;
         }
 
-        public List<Class> reservedClasses { get => reservedClasses; set { reservedClasses = value; OnPropertyChanged("reservedClasses"); } }
+        public List<Class> ReservedClasses { get => reservedClasses; set { reservedClasses = value; OnPropertyChanged("reservedClasses"); } }
 
         public new event PropertyChangedEventHandler PropertyChanged;
 

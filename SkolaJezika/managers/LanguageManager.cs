@@ -1,5 +1,5 @@
-using SR05-2021-POP2022.exceptions;
-using SR05-2021-POP2022.models;
+//using SkolaJezika.exceptions;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class LanguageManager : INotifyPropertyChanged
     {
@@ -32,7 +32,7 @@ namespace SR05-2021-POP2022.managers
             Language language = allLanguages.ToList().Find(x => x.Id == id);
             if(language == null)
             {
-                throw new LanguageNotFoundException("Jezik nije pronadjen.");
+                //throw new LanguageNotFoundException("Jezik nije pronadjen.");
             }
             return language;
         }
@@ -44,7 +44,7 @@ namespace SR05-2021-POP2022.managers
                 name);
             if (language == null)
             {
-                throw new LanguageNotFoundException("Jezik nije pronadjen.");
+                //throw new LanguageNotFoundException("Jezik nije pronadjen.");
             }
             return language;
         }

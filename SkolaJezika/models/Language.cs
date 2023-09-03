@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR05-2021-POP2022.resources.models
+namespace SkolaJezika.models
 {
     public class Language : INotifyPropertyChanged
     {

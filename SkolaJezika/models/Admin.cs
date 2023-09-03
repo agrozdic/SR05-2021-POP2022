@@ -1,11 +1,11 @@
-using SR05-2021-POP2022.models;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR05-2021-POP2022.models
+namespace SkolaJezika.models
 {
     public class Admin : User
     {

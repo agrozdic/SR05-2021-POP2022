@@ -1,5 +1,5 @@
-using SR05-2021-POP2022.exceptions;
-using SR05-2021-POP2022.models;
+//using SkolaJezika.exceptions;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class AddressManager
     {
@@ -30,7 +30,7 @@ namespace SR05-2021-POP2022.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Id == id);
             if (foundAddress == null)
             {
-                throw new AddressNotFoundException("Adresa nije pronadjena");
+                //throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -41,7 +41,7 @@ namespace SR05-2021-POP2022.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name);
             if (foundAddress == null)
             {
-                throw new AddressNotFoundException("Adresa nije pronadjena");
+                //throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -51,7 +51,7 @@ namespace SR05-2021-POP2022.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name && x.Number == number);
             if (foundAddress == null)
             {
-                throw new AddressNotFoundException("Adresa nije pronadjena");
+                //throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -61,7 +61,7 @@ namespace SR05-2021-POP2022.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name && x.Number == number && x.City == city);
             if (foundAddress == null)
             {
-                throw new AddressNotFoundException("Adresa nije pronadjena");
+                //throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }

@@ -1,5 +1,5 @@
-using SR05-2021-POP2022.exceptions;
-using SR05-2021-POP2022.models;
+//using SkolaJezika.exceptions;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class SchoolManager
     {
@@ -30,7 +30,7 @@ namespace SR05-2021-POP2022.managers
             School school = allSchools.ToList().Find(x => x.Id == id);
             if (school == null)
             {
-                throw new SchoolNotFoundException("Skola nije pronadjena.");
+                //throw new SchoolNotFoundException("Skola nije pronadjena.");
             }
             return school;
         }
@@ -41,7 +41,7 @@ namespace SR05-2021-POP2022.managers
             School school = allSchools.ToList().Find(x => x.Name == name);
             if (school == null)
             {
-                throw new SchoolNotFoundException("Skola nije pronadjena.");
+                //throw new SchoolNotFoundException("Skola nije pronadjena.");
             }
             return school;
         }

@@ -1,4 +1,4 @@
-using SR05-2021-POP2022.models;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class TeacherManager { 
         private static TeacherManager instance;
@@ -27,7 +27,7 @@ namespace SR05-2021-POP2022.managers
         {
             try
             {
-                Teacher teacher = allTeachers.ToList().Find(x => x.jmbg == jmbg);
+                Teacher teacher = allTeachers.ToList().Find(x => x.Jmbg == jmbg);
                 return teacher;
             }
             catch(NullReferenceException ex) 

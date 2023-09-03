@@ -1,4 +1,4 @@
-using SR05-2021-POP2022.models;
+using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR38_2021_POP2022.models
+namespace SkolaJezika.models
 {
     public class Class : INotifyPropertyChanged
     {
@@ -63,7 +63,7 @@ namespace SR38_2021_POP2022.models
         }
         public override string ToString()
         {
-            return $"Class {id}, Teacher {teacher.PersonalIdentityNumber}, Student {student?.PersonalIdentityNumber}";
+            return $"Class {id}, Teacher {teacher.Jmbg}, Student {student?.Jmbg}";
         }
     }
 }

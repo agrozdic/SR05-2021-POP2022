@@ -1,5 +1,5 @@
-using SR05-2021-POP2022.models;
-using SR05-2021-POP2022.exceptions;
+using SkolaJezika.models;
+//using SkolaJezika.exceptions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SR05-2021-POP2022.managers
+namespace SkolaJezika.managers
 {
     class StudentManager
     {
@@ -26,11 +26,11 @@ namespace SR05-2021-POP2022.managers
 
         public Student GetStudentByJMBG(string jmbg)
         {
-            Student student = allStudents.ToList().Find(x => x.jmbg == jmbg);
+            Student student = allStudents.ToList().Find(x => x.Jmbg == jmbg);
 
             if (student == null)
             {
-                throw new UserNotFoundException("Student nije pronadjen.");
+                //throw new UserNotFoundException("Student nije pronadjen.");
             }
 
             return student;
