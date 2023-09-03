@@ -10,19 +10,19 @@ namespace SkolaJezika.models
 {
     public class Student : User, INotifyPropertyChanged
     {
-        private List<Class> reservedClasses;
+        private List<Classes> reservedClasses;
 
         public Student()
         {
-            this.reservedClasses = new List<Class>();
+            this.reservedClasses = new List<Classes>();
         }
 
-        public Student(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, Address address, bool active, List<Class> reservedClasses) : base(firstName, lastName, jmbg, email, password, userType, gender, active, address)
+        public Student(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, Address address, bool active, List<Classes> reservedClasses) : base(firstName, lastName, jmbg, email, password, userType, gender, active, address)
         {
             this.reservedClasses = reservedClasses;
         }
 
-        public List<Class> ReservedClasses { get => reservedClasses; set { reservedClasses = value; OnPropertyChanged("reservedClasses"); } }
+        public List<Classes> ReservedClasses { get => reservedClasses; set { reservedClasses = value; OnPropertyChanged("reservedClasses"); } }
 
         public new event PropertyChangedEventHandler PropertyChanged;
 

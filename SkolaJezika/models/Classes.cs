@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace SkolaJezika.models
 {
-    public class Class : INotifyPropertyChanged
+    public class Classes : INotifyPropertyChanged
     {
         private int id;
         private Teacher teacher;
         private DateTime reservedDate;
         private string startingTime;
         private int classLength;
-        private EClassStatus status;
+        private EClassesStatus status;
         private Student student;
         private bool active;
 
-        public Class()
+        public Classes()
         {
 
         }
 
-        public Class(int id, Teacher teacher, DateTime reservedDate, string startingTime, int classLength, EClassStatus status, Student student, bool active)
+        public Classes(int id, Teacher teacher, DateTime reservedDate, string startingTime, int classLength, EClassesStatus status, Student student, bool active)
         {
             this.id = id;
             this.teacher = teacher;
@@ -44,9 +44,9 @@ namespace SkolaJezika.models
 
         public string StartingTime { get => startingTime; set { startingTime = value; OnPropertyChanged("startingTime"); } }
 
-        public int ClassLength { get => classLength; set { classLength = value; OnPropertyChanged("classLength"); } }
+        public int ClassesLength { get => classLength; set { classLength = value; OnPropertyChanged("classLength"); } }
 
-        public EClassStatus Status { get => status; set { status = value; OnPropertyChanged("status"); }}
+        public EClassesStatus Status { get => status; set { status = value; OnPropertyChanged("status"); }}
 
         public Student Student { get => student; set { student = value; OnPropertyChanged("student"); } }
         
@@ -63,7 +63,7 @@ namespace SkolaJezika.models
         }
         public override string ToString()
         {
-            return $"Class {id}, Teacher {teacher.Jmbg}, Student {student?.Jmbg}";
+            return $"Classes {id}, Teacher {teacher.Jmbg}, Student {student?.Jmbg}";
         }
     }
 }

@@ -12,13 +12,13 @@ namespace SkolaJezika.models
     {
         private School school;
         private List<Language> languages;
-        private List<Class> classes;
+        private List<Classes> classes;
         public Teacher()
         {
-           this.classes = new List<Class>();
+           this.classes = new List<Classes>();
         }
 
-        public Teacher(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, Address address, bool active, School school, List<Language> languages, List<Class> classes) : base(firstName, lastName, jmbg, email, password, userType, gender, active, address)
+        public Teacher(string firstName, string lastName, string jmbg, string email, string password, EUserType userType, EGender gender, Address address, bool active, School school, List<Language> languages, List<Classes> classes) : base(firstName, lastName, jmbg, email, password, userType, gender, active, address)
         {
             this.school = school;
             this.languages = languages;
@@ -27,7 +27,7 @@ namespace SkolaJezika.models
 
         public School School { get => school; set { school = value; OnPropertyChanged("school"); } }
         public List<Language> Teachinglanguagess { get => languages; set { languages = value; OnPropertyChanged("school"); } }
-        public List<Class> Classes { get => classes; set { classes = value; OnPropertyChanged("school"); } }
+        public List<Classes> Classes { get => classes; set { classes = value; OnPropertyChanged("school"); } }
 
         //
 

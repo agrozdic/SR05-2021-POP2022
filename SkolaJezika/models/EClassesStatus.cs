@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SkolaJezika.models
 {
-    public enum EClassStatus
+    public enum EClassesStatus
     {
 
         RESERVED = 0, AVAILABLE=1
