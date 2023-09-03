@@ -1,4 +1,4 @@
-//using SkolaJezika.exceptions;
+using SkolaJezika.exceptions;
 using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace SkolaJezika.managers
             Class foundClass = allClasses.ToList().Find(x => x.Id == id);
             if (foundClass == null)
             {
-                //throw new ClassNotFoundException("Cas nije pronadjen.");
+                throw new ClassNotFoundException("Cas nije pronadjen.");
             }
             return foundClass;
         }

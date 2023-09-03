@@ -1,4 +1,4 @@
-//using SkolaJezika.exceptions;
+using SkolaJezika.exceptions;
 using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace SkolaJezika.managers
             School school = allSchools.ToList().Find(x => x.Id == id);
             if (school == null)
             {
-                //throw new SchoolNotFoundException("Skola nije pronadjena.");
+                throw new SchoolNotFoundException("Skola nije pronadjena.");
             }
             return school;
         }
@@ -41,7 +41,7 @@ namespace SkolaJezika.managers
             School school = allSchools.ToList().Find(x => x.Name == name);
             if (school == null)
             {
-                //throw new SchoolNotFoundException("Skola nije pronadjena.");
+                throw new SchoolNotFoundException("Skola nije pronadjena.");
             }
             return school;
         }

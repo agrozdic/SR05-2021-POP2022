@@ -1,4 +1,4 @@
-//using SkolaJezika.exceptions;
+using SkolaJezika.exceptions;
 using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace SkolaJezika.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Id == id);
             if (foundAddress == null)
             {
-                //throw new AddressNotFoundException("Adresa nije pronadjena");
+                throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -41,7 +41,7 @@ namespace SkolaJezika.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name);
             if (foundAddress == null)
             {
-                //throw new AddressNotFoundException("Adresa nije pronadjena");
+                throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -51,7 +51,7 @@ namespace SkolaJezika.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name && x.Number == number);
             if (foundAddress == null)
             {
-                //throw new AddressNotFoundException("Adresa nije pronadjena");
+                throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }
@@ -61,7 +61,7 @@ namespace SkolaJezika.managers
             Address foundAddress = allAddresses.ToList().Find(x => x.Street == name && x.Number == number && x.City == city);
             if (foundAddress == null)
             {
-                //throw new AddressNotFoundException("Adresa nije pronadjena");
+                throw new AddressNotFoundException("Adresa nije pronadjena");
             }
             return foundAddress;
         }

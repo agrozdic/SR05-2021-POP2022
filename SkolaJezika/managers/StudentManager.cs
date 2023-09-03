@@ -1,5 +1,5 @@
 using SkolaJezika.models;
-//using SkolaJezika.exceptions;
+using SkolaJezika.exceptions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,7 +30,7 @@ namespace SkolaJezika.managers
 
             if (student == null)
             {
-                //throw new UserNotFoundException("Student nije pronadjen.");
+                throw new UserNotFoundException("Student nije pronadjen.");
             }
 
             return student;

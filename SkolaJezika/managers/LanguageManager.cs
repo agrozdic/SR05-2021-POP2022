@@ -1,4 +1,4 @@
-//using SkolaJezika.exceptions;
+using SkolaJezika.exceptions;
 using SkolaJezika.models;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace SkolaJezika.managers
             Language language = allLanguages.ToList().Find(x => x.Id == id);
             if(language == null)
             {
-                //throw new LanguageNotFoundException("Jezik nije pronadjen.");
+                throw new LanguageNotFoundException("Jezik nije pronadjen.");
             }
             return language;
         }
@@ -44,7 +44,7 @@ namespace SkolaJezika.managers
                 name);
             if (language == null)
             {
-                //throw new LanguageNotFoundException("Jezik nije pronadjen.");
+                throw new LanguageNotFoundException("Jezik nije pronadjen.");
             }
             return language;
         }
