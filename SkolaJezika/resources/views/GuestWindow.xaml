@@ -18,7 +18,7 @@
         </DataGrid>
         <Button Name="btnExit" Content="Izadji" HorizontalAlignment="Left" Height="24" Margin="63,298,0,0" VerticalAlignment="Top" Width="111" Click="btnExit_Click" Grid.Row="1" />
         <Button Name="btnSearchTeacher" Content="Pretrazi nastavnike u skoli" HorizontalAlignment="Left" Height="24" Margin="316,298,0,0" VerticalAlignment="Top" Width="179" Click="btnSearchTeacher_Click" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" Margin="308,10,0,0" TextWrapping="Wrap" Text="Dobrodosli" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left"  FontSize="18" Margin="308,10,0,0" TextWrapping="Wrap" Text="Dobrodosli" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="365,109,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Schools" FontSize="16" FontWeight="Black" VerticalAlignment="Top"/>
         <ListBox Name="listLanguages" HorizontalAlignment="Left" Height="72" Margin="188,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="166" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="listLanguages_SelectionChanged" SelectionMode="Extended"/>
         <Button Content="Pretrazi nastavnike" HorizontalAlignment="Left" Height="24" Margin="188,298,0,0" Grid.Row="1" VerticalAlignment="Top" Width="108" Name="btnSearchForTeacher" Click="btnSearchForTeacher_Click"/>

@@ -57,9 +57,3 @@ D:\Desktop\SR05-2021-POP2022\SkolaJezika\obj\Debug\SR38-2021-POP2022.g.resources
 D:\Desktop\SR05-2021-POP2022\SkolaJezika\obj\Debug\SkolaJezika.Properties.Resources.resources
 D:\Desktop\SR05-2021-POP2022\SkolaJezika\obj\Debug\SkolaJezika.csproj.GenerateResource.cache
 D:\Desktop\SR05-2021-POP2022\SkolaJezika\obj\Debug\SkolaJezika.csproj.CoreCompileInputs.cache
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database1.mdf
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database1_log.ldf
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database2.mdf
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database2_log.ldf
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database3.mdf
-D:\Desktop\SR05-2021-POP2022\SkolaJezika\bin\Debug\resources\dao\Database3_log.ldf

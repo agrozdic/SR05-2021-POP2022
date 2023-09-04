@@ -65,7 +65,7 @@ namespace SkolaJezika.utilities
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("INSERT INTO teaches VALUES(@language_id, @teacher_id)", conn))
+                    new SqlCommand("INSERT INTO teaches VALUES(@language_id, @teacher_id, 1)", conn))
                 {
                     cmd.Parameters.AddWithValue("@language_id", languageID);
                     cmd.Parameters.AddWithValue("@teacher_id", teacherID);

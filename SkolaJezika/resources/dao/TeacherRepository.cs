@@ -51,18 +51,18 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into Teacher values(@personalIdentityNumber ,@first_name, @last_name, @gender, @address_id, @email, @pass, @u_role, @is_active, @working_at)", conn))
+                    new SqlCommand("insert into Teacher values(@jmbg ,@firstname, @lastname, @gender, @address, @email, @password, @u_role, @is_active, @workingschool)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@first_name", firstName);
-                    cmd.Parameters.AddWithValue("@last_name", lastName);
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@firstname", firstName);
+                    cmd.Parameters.AddWithValue("@lastname", lastName);
                     cmd.Parameters.AddWithValue("@gender", gender.ToString().ToLower());
-                    cmd.Parameters.AddWithValue("@address_id", address.Id);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", password);
+                    cmd.Parameters.AddWithValue("@password", password);
                     cmd.Parameters.AddWithValue("@u_role", userType.ToString().ToLower());
                     cmd.Parameters.AddWithValue("@is_active", 1);
-                    cmd.Parameters.AddWithValue("@working_at", workingSchool.Id);
+                    cmd.Parameters.AddWithValue("@workingschool", workingSchool.Id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -87,16 +87,16 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Teacher set  first_name=@first_name, last_name=@last_name, gender=@gender, address_id=@address_id, email=@email, pass=@pass, working_at=@working_at  where personalIdentityNumber=@personalIdentityNumber", conn))
+                    new SqlCommand("update Teacher set  firstname=@firstname, lastname=@lastname, gender=@gender, address=@address, email=@email, password=@password, workingschool=@workingschool  where jmbg=@jmbg", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@first_name", firstName);
-                    cmd.Parameters.AddWithValue("@last_name", lastName);
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@firstname", firstName);
+                    cmd.Parameters.AddWithValue("@lastname", lastName);
                     cmd.Parameters.AddWithValue("@gender", gender.ToString().ToLower());
-                    cmd.Parameters.AddWithValue("@address_id", address.Id);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", password);
-                    cmd.Parameters.AddWithValue("@working_at", workingSchool.Id);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@workingschool", workingSchool.Id);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -115,9 +115,9 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Teacher set is_active=0 where personalIdentityNumber=@personalIdentityNumber", conn))
+                    new SqlCommand("update Teacher set is_active=0 where jmbg=@jmbg", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();

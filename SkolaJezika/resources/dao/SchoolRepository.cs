@@ -46,11 +46,11 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into School values(@id ,@school_name, @address_number, @is_active)", conn))
+                    new SqlCommand("insert into School values(@id ,@name, @address, @is_active)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@school_name", name);
-                    cmd.Parameters.AddWithValue("@address_number", address.Id);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.Parameters.AddWithValue("@is_active", 1);
                     cmd.ExecuteNonQuery();
                 }
@@ -82,11 +82,11 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update School set school_name=@school_name, address_number=@address_number where id=@id", conn))
+                    new SqlCommand("update School set name=@name, address=@address where id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@school_name", name);
-                    cmd.Parameters.AddWithValue("@address_number", address.Id);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }

@@ -47,7 +47,7 @@ namespace SkolaJezika.resources.views.Students
             }
             else
             {
-                this.Title = "Azuriranje studenta";
+                this.Title = "Azuriraj studenta";
                 btnSubmit.Content = "Azuriraj";
                 txtPersonalIdentityNumber.IsEnabled = false;
                 this.DataContext = student;

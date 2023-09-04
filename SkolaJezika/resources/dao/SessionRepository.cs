@@ -52,15 +52,15 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into Sessions values(@id, @teacher_id, @session_date, @session_time, @session_length, @session_status, @student_id, @is_active)", conn))
+                    new SqlCommand("insert into Sessions values(@id, @teacher, @resdate, @starttime, @duration, @status, @student, @is_active)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@teacher_id", teacher.PersonalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@session_date", reservedDate);
-                    cmd.Parameters.AddWithValue("@session_time", TimeSpan.Parse(startingTime));
-                    cmd.Parameters.AddWithValue("@session_length", classLength);
-                    cmd.Parameters.AddWithValue("@session_status", status.ToString());
-                    cmd.Parameters.AddWithValue("@student_id", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@teacher", teacher.PersonalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@resdate", reservedDate);
+                    cmd.Parameters.AddWithValue("@starttime", TimeSpan.Parse(startingTime));
+                    cmd.Parameters.AddWithValue("@duration", classLength);
+                    cmd.Parameters.AddWithValue("@status", status.ToString());
+                    cmd.Parameters.AddWithValue("@student", DBNull.Value);
                     cmd.Parameters.AddWithValue("@is_active", 1);
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -80,16 +80,27 @@ namespace SkolaJezika.resources.dao
             using (SqlConnection conn = new SqlConnection(DBHandler.connectionString))
             {
                 conn.Open();
+
+                string studentJMBG = session.Student == null ? null : session.Student.PersonalIdentityNumber;
+
                 using (SqlCommand cmd =
-                    new SqlCommand("update Sessions set teacher_id=@teacher_id,session_date=@session_date,session_time=@session_time,session_length=@session_length,student_id=@student_id,session_status=@session_status where id=@id", conn))
+                    new SqlCommand("update Sessions set teacher=@teacher,resdate=@resdate,starttime=@starttime,duration=@duration, student=@student, status=@status where id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@teacher_id", teacher.PersonalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@session_date", reservedDate);
-                    cmd.Parameters.AddWithValue("@session_time", TimeSpan.Parse("21:00"));
-                    cmd.Parameters.AddWithValue("@session_length", classLength);
-                    cmd.Parameters.AddWithValue("@student_id", student?.PersonalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@session_status", status.ToString());
+                    cmd.Parameters.AddWithValue("@teacher", teacher.PersonalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@resdate", reservedDate);
+                    cmd.Parameters.AddWithValue("@starttime", TimeSpan.Parse("21:00"));
+                    cmd.Parameters.AddWithValue("@duration", classLength);
+                    if (studentJMBG == null)
+                    {
+                        cmd.Parameters.AddWithValue("@student", DBNull.Value);
+
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@student", session.Student.PersonalIdentityNumber);
+                    }
+                    cmd.Parameters.AddWithValue("@status", status.ToString());
 
                     int rows = cmd.ExecuteNonQuery();
                     conn.Close();
@@ -104,23 +115,24 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Sessions set teacher_id=@teacher_id,session_date=@session_date,session_time=@session_time,session_length=@session_length, student_id=@student_id, session_status=@session_status where id=@id", conn))
+                    new SqlCommand("update Sessions set teacher=@teacher,resdate=@resdate,starttime=@starttime,duration=@duration, student=@student, status=@status, is_active=@is_active where id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", session.Id);
-                    cmd.Parameters.AddWithValue("@teacher_id", session.Teacher.PersonalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@session_date", session.ReservedDate);
-                    cmd.Parameters.AddWithValue("@session_time", session.StartingTime);
-                    cmd.Parameters.AddWithValue("@session_length", session.ClassLength);
+                    cmd.Parameters.AddWithValue("@teacher", session.Teacher.PersonalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@resdate", session.ReservedDate);
+                    cmd.Parameters.AddWithValue("@starttime", session.StartingTime);
+                    cmd.Parameters.AddWithValue("@duration", session.ClassLength);
                     if (studentJMBG == null)
                     {
-                        cmd.Parameters.AddWithValue("@student_id", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@student", DBNull.Value);
 
                     }
                     else
                     {
-                        cmd.Parameters.AddWithValue("@student_id", session.Student.PersonalIdentityNumber);
+                        cmd.Parameters.AddWithValue("@student", session.Student.PersonalIdentityNumber);
                     }
                     cmd.Parameters.AddWithValue("@status", session.Status.ToString());
+                    cmd.Parameters.AddWithValue("@is_active", session.Active.ToString());
                     int rows = cmd.ExecuteNonQuery();
                     conn.Close();
                 }
@@ -150,7 +162,7 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into reserved values(@session_id, @student_id)", conn))
+                    new SqlCommand("insert into reserved2 values(@session_id, @student_id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@session_id", sessionID);
                     cmd.Parameters.AddWithValue("@student_id", studentID);
@@ -166,7 +178,7 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("DELETE FROM reserved WHERE session_id=@session_id", conn))
+                    new SqlCommand("DELETE FROM reserved2 WHERE session_id=@session_id", conn))
                 {
                     cmd.Parameters.AddWithValue("@session_id", sessionID);
                     cmd.ExecuteNonQuery();

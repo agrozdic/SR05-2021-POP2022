@@ -49,7 +49,7 @@ namespace SkolaJezika.resources.dao
                     new SqlCommand("insert into Language values(@id ,@lang_name, @is_active)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
-                    cmd.Parameters.AddWithValue("@lang_name", languageName);
+                    cmd.Parameters.AddWithValue("@name", languageName);
                     cmd.Parameters.AddWithValue("@is_active", 1);
                     cmd.ExecuteNonQuery();
                     conn.Close();

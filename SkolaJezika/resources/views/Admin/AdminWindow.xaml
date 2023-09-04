@@ -25,7 +25,7 @@
                 <DataGridTextColumn Header="Working School" Binding="{Binding WorkingSchool.Name}" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="299,17,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" FontSize="16px" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="299,17,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" FontSize="16px" />
         <Button Content="Adrese" Name="btnAddress" HorizontalAlignment="Left" Height="35" Margin="215,328,0,0" VerticalAlignment="Top" Width="90" Click="btnAddress_Click"/>
         <Button Content="Skole" Name="btnSchools" HorizontalAlignment="Left" Height="35" Margin="324,328,0,0" VerticalAlignment="Top" Width="90" Click="btnSchools_Click"/>
         <Button Content="Casovi" Name="btnSessions" HorizontalAlignment="Left" Height="35" Margin="439,328,0,0" VerticalAlignment="Top" Width="90" Click="btnSessions_Click"/>

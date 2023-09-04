@@ -8,7 +8,7 @@
         Title="Adresa" Height="450" Width="800">
     <Grid Margin="25 25 25 25">
         <DataGrid HorizontalAlignment="Center" Height="182" Margin="0,50,0,0" VerticalAlignment="Top" Width="730" d:ItemsSource="{d:SampleData ItemCount=5}" Name="dataAddresses" CanUserAddRows="False" />
-        <TextBlock HorizontalAlignment="Left" Margin="330,10,0,0" TextWrapping="Wrap" Text="Addresses" FontSize="16" FontWeight="Bold" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="330,10,0,0" TextWrapping="Wrap" Text="Addresses" FontSize="16"  VerticalAlignment="Top"/>
         <Button Content="Kreiraj" Name="btnCreate" HorizontalAlignment="Left" Margin="188,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnCreate_Click"/>
         <Button Content="Azuriraj" Name="btnUpdate" HorizontalAlignment="Left" Margin="299,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnUpdate_Click"/>
         <Button Content="Izbrisi" Name="btnDelete" HorizontalAlignment="Left" Margin="414,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnDelete_Click"/>

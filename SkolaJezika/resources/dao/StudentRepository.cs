@@ -19,7 +19,7 @@ namespace SkolaJezika.resources.dao
 {
     class StudentRepository
     {
-        
+
         public void Read()
         {
             using (SqlConnection conn = new SqlConnection(DBHandler.connectionString))
@@ -35,7 +35,7 @@ namespace SkolaJezika.resources.dao
                     student.PersonalIdentityNumber = reader.GetString(0);
                     student.FirstName = reader.GetString(1);
                     student.LastName = reader.GetString(2);
-                    student.Gender = (EGender)Enum.Parse(typeof(EGender), char.ToUpper(reader.GetString(3)[0])+reader.GetString(3).Substring(1));
+                    student.Gender = (EGender)Enum.Parse(typeof(EGender), char.ToUpper(reader.GetString(3)[0]) + reader.GetString(3).Substring(1));
                     student.Address = AddressManager.GetInstance().GetAddressById(reader.GetInt32(4));
                     student.Email = reader.GetString(5);
                     student.Password = reader.GetString(6);
@@ -55,16 +55,16 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into Student values(@personalIdentityNumber ,@first_name, @last_name,@gender, @address_id, @email, @pass, @u_role, @is_active)", conn))
+                    new SqlCommand("insert into Student values(@jmbg ,@firstname, @lastname,@gender, @address, @email, @password, @usertype, @is_active)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@first_name", firstName);
-                    cmd.Parameters.AddWithValue("@last_name", lastName);
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@firstname", firstName);
+                    cmd.Parameters.AddWithValue("@lastname", lastName);
                     cmd.Parameters.AddWithValue("@gender", gender.ToString().ToLower());
-                    cmd.Parameters.AddWithValue("@address_id", address.Id);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", password);
-                    cmd.Parameters.AddWithValue("@u_role", userType.ToString().ToLower());
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@usertype", userType.ToString().ToLower());
                     cmd.Parameters.AddWithValue("@is_active", 1);
                     cmd.ExecuteNonQuery();
                 }
@@ -90,15 +90,15 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Student set  first_name=@first_name, last_name=@last_name, gender=@gender, address_id=@address_id, email=@email, pass=@pass where personalIdentityNumber=@personalIdentityNumber", conn))
+                    new SqlCommand("update Student set  firstname=@firstname, lastname=@lastname, gender=@gender, address=@address, email=@email, password=@password where jmbg=@jmbg", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
-                    cmd.Parameters.AddWithValue("@first_name", firstName);
-                    cmd.Parameters.AddWithValue("@last_name", lastName);
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
+                    cmd.Parameters.AddWithValue("@firstname", firstName);
+                    cmd.Parameters.AddWithValue("@lastname", lastName);
                     cmd.Parameters.AddWithValue("@gender", gender.ToString().ToLower());
-                    cmd.Parameters.AddWithValue("@address_id", address.Id);
+                    cmd.Parameters.AddWithValue("@address", address.Id);
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", password);
+                    cmd.Parameters.AddWithValue("@password", password);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }
@@ -113,10 +113,10 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Student set  is_active=0 where personalIdentityNumber=@personalIdentityNumber", conn))
+                    new SqlCommand("update Student set  is_active=0 where jmbg=@jmbg", conn))
                 {
-                    cmd.Parameters.AddWithValue("@personalIdentityNumber", personalIdentityNumber);
-                    
+                    cmd.Parameters.AddWithValue("@jmbg", personalIdentityNumber);
+
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }

@@ -52,11 +52,11 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("insert into Address values(@id ,@street, @address_number, @city, @country, @is_active)", conn))
+                    new SqlCommand("insert into Address values(@id ,@street, @StNumber, @city, @country, @is_active)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@street", street);
-                    cmd.Parameters.AddWithValue("@address_number", number);
+                    cmd.Parameters.AddWithValue("@StNumber", number);
                     cmd.Parameters.AddWithValue("@city", city);
                     cmd.Parameters.AddWithValue("@country", country);
                     cmd.Parameters.AddWithValue("@is_active", 1);
@@ -77,11 +77,11 @@ namespace SkolaJezika.resources.dao
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("update Address set street=@street,address_number=@address_number,city=@city,country=@country where id=@id", conn))
+                    new SqlCommand("update Address set street=@street,StNumber=@StNumber,city=@city,country=@country where id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@street", street);
-                    cmd.Parameters.AddWithValue("@address_number", number);
+                    cmd.Parameters.AddWithValue("@StNumber", number);
                     cmd.Parameters.AddWithValue("@city", city);
                     cmd.Parameters.AddWithValue("@country", country);
                     int rows = cmd.ExecuteNonQuery();

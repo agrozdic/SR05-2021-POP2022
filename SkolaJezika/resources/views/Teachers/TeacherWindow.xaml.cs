@@ -62,7 +62,7 @@ namespace SkolaJezika.resources.views.Teachers
             Session session = (Session) dataSessions.SelectedItem;
             if (dataSessions.SelectedItems.Count == 0 || session.Status.Equals(EClassStatus.AVAILABLE))
             {
-                MessageBox.Show("Prvo oznacite polje!, or selected item must be reserved!");
+                MessageBox.Show("Prvo oznacite polje rezervisanog casa!");
                 return;
             }
             Student student = studentService.FindBySessionID(session.Id);

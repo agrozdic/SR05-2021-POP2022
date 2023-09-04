@@ -10,11 +10,5 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database1.mdf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database1_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database1.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database1_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database2.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database2_log.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database3.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dao/database3_log.ldf")]
 
 

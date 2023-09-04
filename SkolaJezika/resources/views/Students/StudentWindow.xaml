@@ -13,7 +13,7 @@
         <Label Content="Izaberite nastavnika" HorizontalAlignment="Left" Margin="396,63,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Name="cmbSelectTeacher" Margin="400,94,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbSelectTeacher_SelectionChanged"/>
         <Label Content="Moji rezervisani casovi" HorizontalAlignment="Left" Height="29" Margin="24,94,0,0" VerticalAlignment="Top" Width="150"/>
-        <Button Content="Reserve Class" Name="btnReserve"  HorizontalAlignment="Left" Height="29" Margin="400,328,0,0" VerticalAlignment="Top" Width="91" Click="btnReserve_Click"/>
+        <Button Content="Rezervisi cas" Name="btnReserve"  HorizontalAlignment="Left" Height="29" Margin="400,328,0,0" VerticalAlignment="Top" Width="91" Click="btnReserve_Click"/>
         <Button Content="Odustani od rezervacije" Name="btnCancel" HorizontalAlignment="Left" Margin="24,328,0,0" VerticalAlignment="Top" Width="120" Height="29" Click="btnCancel_Click"/>
         <Button Content="Licni podaci" Name="btnViewPersonalInfo" HorizontalAlignment="Left" Height="32" Margin="394,388,0,0" VerticalAlignment="Top" Width="118" Click="btnViewPersonalInfo_Click"/>
         <Button Content="Pretrazi nastavnike" Name="btnSearchTeachers" HorizontalAlignment="Left" Height="32" Margin="541,388,0,0" VerticalAlignment="Top" Width="101" Click="btnSearchTeachers_Click"/>
