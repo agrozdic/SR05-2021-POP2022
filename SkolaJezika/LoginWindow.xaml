@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkolaJezika"
         mc:Ignorable="d"
-        Title="Skola jezika" Height="450" Width="450">
+        Title="Skola jezika" Height="450" Width="700">
     <Grid Margin="25, 25, 25, 25">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -13,12 +13,12 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" x:Name="lblIntro" FontSize="15" HorizontalAlignment="Center" Margin="0,54,0,303" Text="Dobrodosli" TextAlignment="Center"/>
         <TextBox Name="txtPersonalIdentityNumber" HorizontalAlignment="Center"  Margin="0,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="JMBG" HorizontalAlignment="Left" Margin="26,86,0,0" VerticalAlignment="Top"/>
+        <Label Content="JMBG" HorizontalAlignment="Center" Margin="0,86,0,0" VerticalAlignment="Top"/>
         <PasswordBox Name="txtPassword" HorizontalAlignment="Center"  Margin="0,174,0,0"  VerticalAlignment="Top" Width="330"/>
-        <Label Content="Lozinka" HorizontalAlignment="Left" Margin="26,146,0,0" VerticalAlignment="Top"/>
-        <Button Content="Prijavi se" Name="btnLogin" HorizontalAlignment="Left" Height="24" Margin="28,206,0,0" VerticalAlignment="Top" Width="77" Click="btnLogin_Click"/>
-        <TextBlock HorizontalAlignment="Left"  Height="21" Margin="28,252,0,0" TextWrapping="Wrap" Text="Registrujte se ili nastavite kao gost." VerticalAlignment="Top" Width="158"/>
-        <Button Content="Registruj se" Name="btnRegister" HorizontalAlignment="Left" Height="23" Margin="28,278,0,0" VerticalAlignment="Top" Width="89" Click="btnRegister_Click"/>
-        <Button Content="Nastavi kao gost" Name="btnContinueAsGuest" HorizontalAlignment="Center" Height="23" Margin="0,278,0,0" VerticalAlignment="Top" Width="110" Click="btnContinueAsGuest_Click"/>
+        <Label Content="Lozinka" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top"/>
+        <Button Content="Prijavi se" Name="btnLogin" HorizontalAlignment="Center" Height="24" Margin="0,206,0,0" VerticalAlignment="Top" Width="77" Click="btnLogin_Click"/>
+        <TextBlock HorizontalAlignment="Center"  Height="21" Margin="227,252,213.6,0" TextWrapping="Wrap" Text="Registrujte se ili nastavite kao gost." VerticalAlignment="Top" Width="203"/>
+        <Button Content="Registruj se" Name="btnRegister" HorizontalAlignment="Center" Height="23" Margin="0,278,0,0" VerticalAlignment="Top" Width="89" Click="btnRegister_Click"/>
+        <Button Content="Nastavi kao gost" Name="btnContinueAsGuest" HorizontalAlignment="Center" Height="23" Margin="264,318,269.6,0" VerticalAlignment="Top" Width="110" Click="btnContinueAsGuest_Click"/>
     </Grid>
 </Window>

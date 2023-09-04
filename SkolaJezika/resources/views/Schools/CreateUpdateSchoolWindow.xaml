@@ -8,9 +8,9 @@
         Title="Skola" Height="420" Width="420">
     <Grid Margin="25 25 25 25">
         <TextBox HorizontalAlignment="Center" Name="txtName" Height="20" Margin="0,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Naziv" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="Naziv" HorizontalAlignment="Center" Margin="10,17,0,0" VerticalAlignment="Top"/>
         <Button Content="Button" Name="btnSubmit" HorizontalAlignment="Left" Margin="14,306,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="btnSubmit_Click"/>
-        <Label Content="Jezici" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Jezici" HorizontalAlignment="Center" Margin="10,72,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="14,220,0,0" TextWrapping="Wrap" Text="" Name="txtStreet" VerticalAlignment="Top" Width="140"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="203,220,0,0" TextWrapping="Wrap" Text="" Name="txtNumber" VerticalAlignment="Top" Width="136"/>
         <TextBox HorizontalAlignment="Left" Height="19" Margin="12,266,0,0" TextWrapping="Wrap" Text="" Name="txtCity" VerticalAlignment="Top" Width="140"/>

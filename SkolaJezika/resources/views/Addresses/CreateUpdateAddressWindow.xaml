@@ -8,14 +8,14 @@
         Title="Adresa" Height="400" Width="400">
     <Grid Margin="25 25 25 25">
         <TextBox HorizontalAlignment="Center" Name="txtStreet" Height="20" Margin="0,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Ulica" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ulica" HorizontalAlignment="Center" Margin="10,17,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Center" Name="txtNumber" Height="20" Margin="0,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Broj" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Broj" HorizontalAlignment="Center" Margin="10,64,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Center" Name="txtCity" Height="20" Margin="0,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Grad" HorizontalAlignment="Left" Margin="7,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Grad" HorizontalAlignment="Center" Margin="7,110,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Center" Name="txtCountry" Height="20" Margin="0,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Drzava" HorizontalAlignment="Left" Margin="12,156,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" Name="btnSubmit" HorizontalAlignment="Left" Margin="12,230,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="btnSubmit_Click"/>
+        <Label Content="Drzava" HorizontalAlignment="Center" Margin="12,156,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" Name="btnSubmit" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="btnSubmit_Click"/>
 
     </Grid>
 </Window>

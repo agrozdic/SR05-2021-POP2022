@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkolaJezika.resources.views.Schools"
         mc:Ignorable="d"
-        Title="Skola" Height="450" Width="800">
-    <Grid Margin="25 25 25 25">
+        Title="Skola" Height="450" Width="1000">
+    <Grid Margin="125 25 25 25">
         <DataGrid HorizontalAlignment="Center" Height="182" Margin="0,50,0,0" VerticalAlignment="Top" Width="730" d:ItemsSource="{d:SampleData ItemCount=5}" Name="dataSchool" CanUserAddRows="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="330,10,0,0" TextWrapping="Wrap" Text="Schools" FontSize="16"  VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="-100,10,0,0" TextWrapping="Wrap" Text="Skole" FontSize="16"  VerticalAlignment="Top"/>
         <Button Content="Kreiraj" Name="btnCreate" HorizontalAlignment="Left" Margin="188,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnCreate_Click"/>
         <Button Content="Azuriraj" Name="btnUpdate" HorizontalAlignment="Left" Margin="299,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnUpdate_Click"/>
         <Button Content="Izbrisi" Name="btnDelete" HorizontalAlignment="Left" Margin="414,333,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="btnDelete_Click"/>

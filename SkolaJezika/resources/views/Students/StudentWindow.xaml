@@ -8,7 +8,7 @@
         Title="Student" Height="480" Width="800">
     <Grid>
         <DataGrid Name="dataReservedClasses" HorizontalAlignment="Left" Height="195" Margin="24,128,0,0" VerticalAlignment="Top" Width="335" d:ItemsSource="{d:SampleData ItemCount=5}" CanUserAddRows="false" CanUserDeleteRows="false" CanUserResizeRows="False"/>
-        <TextBlock HorizontalAlignment="Center" FontSize="16" Margin="0,37,0,0" TextWrapping="Wrap" Text="Student Window" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" FontSize="16" Margin="0,37,0,0" TextWrapping="Wrap" Text="Student" VerticalAlignment="Top"/>
         <DataGrid HorizontalAlignment="Left" Name="dataAvailableClasses" Height="195" Margin="400,128,0,0" VerticalAlignment="Top" Width="351" d:ItemsSource="{d:SampleData ItemCount=5}" CanUserAddRows="false" CanUserDeleteRows="false" CanUserResizeRows="False" />
         <Label Content="Izaberite nastavnika" HorizontalAlignment="Left" Margin="396,63,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Name="cmbSelectTeacher" Margin="400,94,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbSelectTeacher_SelectionChanged"/>

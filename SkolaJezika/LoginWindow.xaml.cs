@@ -83,7 +83,7 @@ namespace SkolaJezika
             }
             else
             {
-                MessageBox.Show("Login credentials are wrong!");
+                MessageBox.Show("Pogresni podaci!");
             }
         }
     }

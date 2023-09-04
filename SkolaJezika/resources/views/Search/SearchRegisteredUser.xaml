@@ -16,7 +16,7 @@
                 <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,13,0,0" TextWrapping="Wrap" Text="Search registered users" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,13,0,0" TextWrapping="Wrap" Text="Korisnici" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="96,293,0,0" TextWrapping="Wrap" Text="" Name="txtFirstName" VerticalAlignment="Top" Width="120" TextChanged="txtFirstName_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="247,293,0,0" TextWrapping="Wrap" Text="" Name="txtLastName" VerticalAlignment="Top" Width="120" TextChanged="txtLastName_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="402,293,0,0" TextWrapping="Wrap" Text="" Name="txtMail" VerticalAlignment="Top" Width="120" TextChanged="txtMail_TextChanged"/>

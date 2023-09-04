@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Admin" Height="500" Width="800">
-    <Grid Margin="25 25 25 25">
+        Title="Admin" Height="500" Width="1000">
+    <Grid Margin="125 25 25 25">
         <DataGrid ItemsSource="{Binding Student}" HorizontalAlignment="Left" Name="dataStudents" Height="180" Margin="10,54,0,0" VerticalAlignment="Top" Width="349" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding PersonalIdentityNumber}" />
@@ -25,7 +25,7 @@
                 <DataGridTextColumn Header="Working School" Binding="{Binding WorkingSchool.Name}" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="299,17,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" FontSize="16px" />
+        <TextBlock HorizontalAlignment="Center" Margin="-100, 17,0,0" TextWrapping="Wrap" Text="Admin" VerticalAlignment="Top" FontSize="16px" />
         <Button Content="Adrese" Name="btnAddress" HorizontalAlignment="Left" Height="35" Margin="215,328,0,0" VerticalAlignment="Top" Width="90" Click="btnAddress_Click"/>
         <Button Content="Skole" Name="btnSchools" HorizontalAlignment="Left" Height="35" Margin="324,328,0,0" VerticalAlignment="Top" Width="90" Click="btnSchools_Click"/>
         <Button Content="Casovi" Name="btnSessions" HorizontalAlignment="Left" Height="35" Margin="439,328,0,0" VerticalAlignment="Top" Width="90" Click="btnSessions_Click"/>
