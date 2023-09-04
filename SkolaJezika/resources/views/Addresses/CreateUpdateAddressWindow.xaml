@@ -1,0 +1,21 @@
+﻿<Window x:Class="SkolaJezika.resources.views.Addresses.CreateUpdateAddressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SkolaJezika.resources.views.Addresses"
+        mc:Ignorable="d"
+        Title="Adresa" Height="400" Width="400">
+    <Grid Margin="25 25 25 25">
+        <TextBox HorizontalAlignment="Center" Name="txtStreet" Height="20" Margin="0,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
+        <Label Content="Ulica" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Center" Name="txtNumber" Height="20" Margin="0,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
+        <Label Content="Broj" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Center" Name="txtCity" Height="20" Margin="0,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
+        <Label Content="Grad" HorizontalAlignment="Left" Margin="7,110,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Center" Name="txtCountry" Height="20" Margin="0,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="330"/>
+        <Label Content="Drzava" HorizontalAlignment="Left" Margin="12,156,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" Name="btnSubmit" HorizontalAlignment="Left" Margin="12,230,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="btnSubmit_Click"/>
+
+    </Grid>
+</Window>

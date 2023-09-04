@@ -1,0 +1,30 @@
+﻿<Window x:Class="SkolaJezika.resources.views.Search.SearchRegisteredUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SkolaJezika.resources.views.Search"
+        mc:Ignorable="d"
+        Title="Pretraga studenata" Height="450" Width="800">
+    <Grid Margin="25 25 25 25">
+        <DataGrid ItemsSource="{Binding Student}" HorizontalAlignment="Center" Name="dataUsers" Height="180" Margin="0,54,0,0" VerticalAlignment="Top" Width="730" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding PersonalIdentityNumber}" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,13,0,0" TextWrapping="Wrap" Text="Search registered users" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="96,293,0,0" TextWrapping="Wrap" Text="" Name="txtFirstName" VerticalAlignment="Top" Width="120" TextChanged="txtFirstName_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="247,293,0,0" TextWrapping="Wrap" Text="" Name="txtLastName" VerticalAlignment="Top" Width="120" TextChanged="txtLastName_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="402,293,0,0" TextWrapping="Wrap" Text="" Name="txtMail" VerticalAlignment="Top" Width="120" TextChanged="txtMail_TextChanged"/>
+        <ComboBox HorizontalAlignment="Left" Name="cmbType" Margin="563,293,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbType_SelectionChanged"/>
+        <Label Content="Ime" HorizontalAlignment="Left" Margin="96,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prezme" HorizontalAlignment="Left" Margin="247,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="402,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tip" HorizontalAlignment="Left" Margin="563,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.518,-0.376"/>
+        <Button Content="Odustani" Name="btnCancel" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" Height="25" Width="78" Click="btnCancel_Click"/>
+    </Grid>
+</Window>

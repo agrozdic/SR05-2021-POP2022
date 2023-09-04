@@ -1,0 +1,39 @@
+﻿<Window x:Class="SkolaJezika.resources.views.ViewUpdatePersonalData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SkolaJezika.resources.views"
+        mc:Ignorable="d"
+        Title="Licni podaci" Height="540" Width="450">
+    <Grid Margin="25 25 25 25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Ime" HorizontalAlignment="Left" Margin="-2,-2,0,0" VerticalAlignment="Top" Height="26" Width="67" Grid.Row="1"/>
+        <TextBox Name="txtFirstName" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" Grid.Row="1" Margin="0,24,0,0"/>
+        <Label Content="Prezime" HorizontalAlignment="Left" Margin="-1,44,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="66"/>
+        <TextBox Name="txtLastName" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" Grid.Row="1" Margin="0,70,0,0"/>
+        <Label Content="JMBG
+               " HorizontalAlignment="Left" Margin="-1,92,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="189"/>
+        <TextBox Name="txtPersonalIdentityNumber" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" Grid.Row="1" Margin="0,121,0,0"/>
+        <Label Content="Pol
+               " HorizontalAlignment="Left" Margin="-1,140,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="66"/>
+        <ComboBox Name="comboGender" HorizontalAlignment="Left" Margin="2,166,0,0" VerticalAlignment="Top" Width="81" Grid.Row="1" SelectedItem="{Binding Gender}"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="-2,188,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="189"/>
+        <TextBox Name="txtEmail" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380" Grid.Row="1" Margin="0,214,0,0"/>
+        <Label Content="Lozinka" HorizontalAlignment="Left" Margin="-2,234,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="189"/>
+        <PasswordBox Name="txtPassword" HorizontalAlignment="Center" Height="20"  VerticalAlignment="Top" Width="380" Grid.Row="1" Margin="0,260,0,0"/>
+        <Label Content="Adresa" HorizontalAlignment="Left" Margin="-2,280,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox Name="txtStreetAddress"  HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" Grid.Row="1" Margin="2,306,0,0"/>
+        <Label Content="Broj" HorizontalAlignment="Left" Margin="200,280,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox Name="txtStreetNumber" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" Grid.Row="1" Margin="200,306,0,0"/>
+        <Label Content="Grad" HorizontalAlignment="Left" Margin="-2,330,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox Name="txtCity" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" Grid.Row="1" Margin="9,356,0,0"/>
+        <Label Content="Drzava" HorizontalAlignment="Left" Margin="200,330,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox Name="txtCountry" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" Grid.Row="1" Margin="200,356,0,0"/>
+        <Button Name="btnSubmit" Content="Registruj se" HorizontalAlignment="Left" Height="23" Margin="91,409,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="210" Click="btnSubmit_Click"/>
+
+    </Grid>
+</Window>

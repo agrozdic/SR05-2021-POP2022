@@ -1,5 +1,3 @@
-CREATE DATABASE SkolaJezika;
-
 BEGIN TRANSACTION;
 
 CREATE TABLE Administrator(
@@ -11,7 +9,7 @@ CREATE TABLE Administrator(
 	Email VARCHAR(30) NOT NULL,
 	Password VARCHAR(30) NOT NULL,
 	UserType VARCHAR(10) NOT NULL,
-	Active BIT NOT NULL
+	is_Active BIT NOT NULL
 );
 
 CREATE TABLE Student(
@@ -23,7 +21,7 @@ CREATE TABLE Student(
 	Email VARCHAR(30) NOT NULL,
 	Password VARCHAR(30) NOT NULL,
 	UserType VARCHAR(10) NOT NULL,
-	Active BIT NOT NULL
+	is_Active BIT NOT NULL
 );
 
 CREATE TABLE Teacher(
@@ -35,7 +33,7 @@ CREATE TABLE Teacher(
 	Email VARCHAR(30) NOT NULL,
 	Password VARCHAR(30) NOT NULL,
 	UserType VARCHAR(10) NOT NULL,
-	Active BIT NOT NULL,
+	is_Active BIT NOT NULL,
 	WorkingSchool INT NOT NULL
 );
 
@@ -45,7 +43,7 @@ CREATE TABLE Address(
 	StNumber INT NOT NULL,
 	City VARCHAR(30) NOT NULL,
 	Country VARCHAR(30) NOT NULL,
-	Active BIT NOT NULL
+	is_Active BIT NOT NULL
 );
 
 ALTER TABLE Administrator ADD CONSTRAINT AAFK FOREIGN KEY (Address) REFERENCES Address(Id);
@@ -58,7 +56,7 @@ CREATE TABLE School(
 	Id INT PRIMARY KEY NOT NULL,
 	Name VARCHAR(50) NOT NULL,
 	Address INT NOT NULL,
-	Active BIT NOT NULL
+	is_Active BIT NOT NULL
 );
 
 ALTER TABLE Teacher ADD CONSTRAINT TSFK FOREIGN KEY (WorkingSchool) REFERENCES School(Id);
@@ -68,28 +66,29 @@ ALTER TABLE School ADD CONSTRAINT SAFK2 FOREIGN KEY (Address) REFERENCES Address
 CREATE TABLE Language(
 	Id INT PRIMARY KEY NOT NULL,
 	Name VARCHAR(20) NOT NULL,
-	Active BIT NOT NULL
+	is_Active BIT NOT NULL
 );
 
-CREATE TABLE Class(
+CREATE TABLE Sessions(
 	Id INT PRIMARY KEY NOT NULL,
 	Teacher VARCHAR(13) NOT NULL,
 	ResDate DATE NOT NULL,
 	StartTime TIME NOT NULL,
 	Duration INT NOT NULL,
 	Status VARCHAR(10) NOT NULL,
-	Student VARCHAR(13) NOT NULL,
-	Active BIT NOT NULL
+	Student VARCHAR(13),
+	is_Active BIT NOT NULL
 );
 
-ALTER TABLE Class ADD CONSTRAINT CTFK FOREIGN KEY (Teacher) REFERENCES Teacher(JMBG);
+ALTER TABLE Sessions ADD CONSTRAINT CTFK FOREIGN KEY (Teacher) REFERENCES Teacher(JMBG);
 
-ALTER TABLE Class ADD CONSTRAINT CSFK FOREIGN KEY (Teacher) REFERENCES Student(JMBG);
+ALTER TABLE Sessions ADD CONSTRAINT CSFK FOREIGN KEY (Student) REFERENCES Student(JMBG);
+
 
 CREATE TABLE HasLanguage(
 	School_Id INT NOT NULL,
 	Language_Id INT NOT NULL,
-	Active BIT NOT NULL	
+	is_Active BIT NOT NULL	
 );
 
 ALTER TABLE HasLanguage ADD CONSTRAINT HSFK FOREIGN KEY (School_Id) REFERENCES School(Id);
@@ -101,7 +100,7 @@ ALTER TABLE HasLanguage ADD CONSTRAINT HPK PRIMARY KEY (Language_Id, School_Id);
 CREATE TABLE Teaches(
 	Teacher_Id VARCHAR(13) NOT NULL,
 	Language_Id INT NOT NULL,
-	Active BIT NOT NULL	
+	is_Active BIT NOT NULL	
 );
 
 ALTER TABLE Teaches ADD CONSTRAINT TTFK FOREIGN KEY (Teacher_Id) REFERENCES Teacher(JMBG);
@@ -142,5 +141,26 @@ INSERT INTO HasLanguage VALUES (2, 2, 1);
 
 INSERT INTO Teaches VALUES ('1234567890004', 1, 1);
 INSERT INTO Teaches VALUES ('1234567890005', 2, 1);
+
+
+CREATE TABLE Reserved(
+	Id INT PRIMARY KEY NOT NULL,
+	Session_Id INT NOT NULL,
+	Student_Id VARCHAR(13) NOT NULL
+);
+
+ALTER TABLE Reserved ADD CONSTRAINT SRFK5 FOREIGN KEY (Session_Id) REFERENCES Sessions(Id);
+
+ALTER TABLE Reserved ADD CONSTRAINT SRFK6 FOREIGN KEY (Student_Id) REFERENCES Student(JMBG);
+
+	
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (1, '1234567890004', '05/09/2023', '15:00', 45, 'AVAILABLE', 1);
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (2, '1234567890004', '05/09/2023', '16:00', 45, 'AVAILABLE', 1);
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (3, '1234567890004', '05/09/2023', '17:00', 45, 'AVAILABLE', 1);
+
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (4, '1234567890005', '05/09/2023', '15:00', 45, 'AVAILABLE', 1);
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (5, '1234567890005', '05/09/2023', '16:00', 45, 'AVAILABLE', 1);
+INSERT INTO Sessions (Id, Teacher, ResDate, StartTime, Duration, Status, is_Active) VALUES (6, '1234567890005', '05/09/2023', '17:00', 45, 'AVAILABLE', 1);
+
 
 COMMIT TRANSACTION;
