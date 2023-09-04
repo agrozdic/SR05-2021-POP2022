@@ -9,7 +9,7 @@ namespace SkolaJezika.handlers
 {
     class DBHandler
     {
-        public static readonly String connectionString = @"";
+        public static readonly String connectionString = @"Data Source=.;Initial Catalog=SkolaJezika100;Integrated Security=True";
 
         public static void DeleteAllLanguagesFromHasLanguagesBasedBySchoolID(int id)
         {
